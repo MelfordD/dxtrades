@@ -1,0 +1,87 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+    <!-- Start Banner -->
+    <div class="section inner_page_banner">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="banner_title">
+                        <h3>About us</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Banner -->
+    
+    <!-- section -->
+    <div class="section layout_padding about_bg">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="full paddding_left_15">
+                        <div class="heading_main text_align_left">
+                           <h2>About</h2>    
+                        </div>
+                    </div>
+                    <div class="full paddding_left_15">
+                        <p>DxTrades is a professional trading and investment company with emphasis on cryptocurrency, forex, binary option, CFD's. We are a group of qualified and trained financiers with technical knowledge. We actively monitor and trade the forex market, binary option, CFD's.</p>
+                    </div>
+                    
+                </div>
+                <div class="col-md-6">
+                    <div class="full text_align_right_img">
+                        <img src="{% static 'images/img3.png' %}" alt="#" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- end section -->
+
+    <!-- section -->
+    <div class="section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="full text_align_right_img">
+                        <img src="{% static 'images/img1.png' %}" alt="#" />
+                    </div>
+                </div>
+                <div class="col-md-6 layout_padding">
+                    <div class="full paddding_left_15">
+                        
+                    </div>
+                    <div class="full paddding_left_15">
+                        <p>The vast majority of customer deposits are stored offline in air-gapped cold storage. We only keep enough online to facilities active trading, which greatly minimizes risk and exposure. Our auditing programs monitor every activity 24/7/365. Their job is to report and block any suspicious activity before it becomes a problem.</p>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+	<!-- end section -->
+   
+    <!-- section -->
+    <div class="section white_fonts" style="background: #111;">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6" style="background: #fff;">
+                    <div class="full text_align_right_img">
+                        <img src="{% static 'images/img2.png' %}" alt="#" />
+                    </div>
+                </div>
+                <div class="col-md-6 layout_padding">
+                    
+                    <div class="full paddding_left_15">
+                        <p>We have strong roots and believe in customer service and transparency. We are committed to optimum delivery and uprightness. We let our service do the talking. Any funds you put in DxTrades are only used to facilitate trading through your account. Unlike banks, we do not operate on fractional reserves.</p>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- end section -->
+{% endblock %}

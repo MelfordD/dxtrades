@@ -1,0 +1,1 @@
+web: gunicorn dxtrades.wsgi --log-file -
