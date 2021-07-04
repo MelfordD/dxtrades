@@ -25,5 +25,7 @@ urlpatterns = [
     path('services/', views.services, name="services"),
     path('contact/', views.contact, name="contact"),
     path('investment/', views.investment, name="investment"),
+    path('wallet/', views.wallet, name="wallet"),
+    path('deposit/', views.deposit, name="deposit"),
     path('admin/', admin.site.urls),
 ]

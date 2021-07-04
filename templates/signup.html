@@ -1,0 +1,109 @@
+{% load static %}
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="{% static 'fonts/icomoon/style.css' %}">
+
+    <link rel="stylesheet" href="{% static 'css/css/owl.carousel.min.css' %}">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="{% static 'css/css/bootstrap.min.css' %}">
+    
+    <!-- Style -->
+    <link rel="stylesheet" href="{% static 'css/css/style.css' %}">
+
+    <title>Sign up</title>
+  </head>
+  <body>
+  
+
+  <div class="d-lg-flex half">
+    <a href="{% url 'home' %}" class="bg order-1 order-md-2" style="background-image:url('{% static "images/bg_1.jpg" %}');"></a>
+    <div class="contents order-2 order-md-1">
+
+      <div class="container">
+        <div class="row align-items-center justify-content-center">
+          <div class="col-md-7">
+            <div class="mb-4">
+              <h3>Sign up</h3>
+
+            </div>
+            <form action="" method="post">
+				{% csrf_token %}
+              <div class="form-group first">
+                <label for="firstname">First Name</label>
+                <input type="text" name="first_name" class="form-control" id="firstname">
+              </div>
+			  
+			  <div class="form-group first">
+                <label for="lastname">Last Name</label>
+                <input type="text" name="last_name" class="form-control" id="lastname">
+              </div>
+			  
+			  <div class="form-group first">
+                <label for="username">Username</label>
+                <input type="text" name="username" class="form-control" id="username">
+              </div>
+			  
+			  <div class="form-group first">
+                <label for="email">Email</label>
+                <input type="email" name="email" class="form-control" id="email">
+              </div>
+			  			  
+              <div class="form-group last mb-3">
+                <label for="password">Password</label>
+                <input type="password" name="password" class="form-control" id="password">                
+              </div>
+			  
+			  <div class="form-group last mb-3">
+                <label for="password2">Confirm Password</label>
+                <input type="password2" name="password2" class="form-control" id="password">                
+              </div>
+			  
+              
+              <div class="d-flex mb-5 align-items-center">
+                <label class="control control--checkbox mb-0"><span class="caption">Remember me</span>
+                  <input type="checkbox" checked="checked"/>
+                  <div class="control__indicator"></div>
+                </label>
+                
+              </div>
+			  
+			  <div style="text-align:center color:red">
+				{% for message in messages %}
+				    <h6>{{message}}</h6>
+				{% endfor %}
+			  </div>
+			  
+			  <p style="text-align:center">Have an account? <span><a href="{% url 'login' %}">Login</a></span></p>
+
+              <input type="submit"  class="btn btn-block btn-primary">
+
+         
+              
+              
+            </form>
+			
+			
+          </div>
+        </div>
+      </div>
+    </div>
+
+    
+  </div>
+    
+    
+
+    <script src="{% static 'js/js/jquery-3.3.1.min.js' %}"></script>
+    <script src="{% static 'js/js/popper.min.js' %}"></script>
+    <script src="{% static 'js/js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'js/js/main.js' %}"></script>
+  </body>
+</html>

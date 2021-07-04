@@ -1,5 +1,8 @@
 {% extends 'base.html' %}
 {% load static %}
+{% block nav_home %}
+	active
+{% endblock %}
 {% block content %}
 
 
@@ -9,14 +12,14 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="pogoSlider" id="js-main-slider">
-                    <div class="pogoSlider-slide" style="background-image:url('{% static "images/slide_img.png" %}')";>
+                    <div class="pogoSlider-slide" style="background-image:url('{% static "images/slide_img.png" %}');">
                         <div class="container">
                             <div class="row">
                                 <div class="col-md-12">
                                     <div class="slide_text white_fonts">
                                         <h3>Fast & Secure<br><strong id="text_in_slide">Investment</strong></h3>
                                         <br>
-                                        <a class="start_exchange_bt" href="investment.html"> Invest Now</a>
+                                        <a class="start_exchange_bt" href="{% url 'investment' %}"> Invest Now</a>
                                     </div>
                                 </div>
                             </div>
@@ -29,7 +32,7 @@
                                     <div class="slide_text white_fonts">
                                         <h3>Reliable & Guarded<br><strong>Wallet</strong></h3>
                                         <br>
-                                        <a class="start_exchange_bt" href="signup.html">Sign Up</a>
+                                        <a class="start_exchange_bt" href="{% url 'signup' %}">Sign Up</a>
                                     </div>
                                 </div>
                             </div>
@@ -65,7 +68,7 @@
 						Cryptocurrency trading, Binary options trading, CFD's, Forex, Stock & Commodities.</p>
                     </div>
                     <div class="full paddding_left_15">
-                        <a class="main_bt" href="investment.html">Invest</a>
+                        <a class="main_bt" href="{% url 'investment' %}">Invest</a>
                     </div>
                 </div>
             </div>
@@ -94,14 +97,14 @@
                 <div class="col-md-3 col-sm-6 col-xs-12">
                     <div class="full fill services_blog">
                         <img class="img-responsive" src="{% static 'images/s2.png' %}" alt="#" />
-                        <a href="investment.html"><h4>Investment</h4></a>
+                        <a href="{% url 'investment' %}"><h4>Investment</h4></a>
                     </div>
                 </div>
                 <div class="col-md-3 col-sm-6 col-xs-12">
 					
                     <div class="full fill services_blog">
                         <img class="img-responsive" src="{% static 'images/s3.png' %}" alt="#" />
-                        <a href="wallet.html"><h4>Wallet</h4></a>
+                        <a href="{% url 'wallet' %}"><h4>Wallet</h4></a>
                     </div>
                 </div>
                 
@@ -110,7 +113,7 @@
                 <div class="col-sm-12">
                     <div class="full">
                         <div class="center">
-                            <a class="main_bt" href="services.html">Our Services </a>
+                            <a class="main_bt" href="{% url 'services' %}">Our Services </a>
                         </div>
                     </div>
                 </div>
@@ -139,7 +142,7 @@
                         <p>At DxTrades, we provide a safe and reliable digital money wallet where our customers can conviniently save or store digital currency and make withdrawal at anytime.</p>
                     </div>
                     <div class="full paddding_left_15">
-                        <a class="main_bt" href="wallet.html">Open Wallet</a>
+                        <a class="main_bt" href="{% url 'wallet' %}">Open Wallet</a>
                     </div>
                 </div>
             </div>
@@ -160,7 +163,7 @@
                         <p>DxTrades is a professional trading and investment company with emphasis on cryptocurrency, forex, binary option, CFD's. We are a group of qualified and trained financiers with technical knowledge. We actively monitor and trade the forex market, binary option...</p>
                     </div>
                     <div class="full paddding_left_15">
-                        <a class="main_bt" href="about.html">Read More </a>
+                        <a class="main_bt" href="{% url 'about' %}">Read More </a>
                     </div>
                 </div>
                 <div class="col-md-6">

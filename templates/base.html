@@ -22,7 +22,7 @@
     <link rel="apple-touch-icon" href="#" />
 	
 	<!-- Favicon icon -->
-    <link rel="icon" href="assets/images/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="{% static 'assets/images/favicon.ico'%}" type="image/x-icon">
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="{% static 'css/bootstrap.min.css'%}" />
@@ -60,12 +60,12 @@
             <div class="container">
                 <div class="row">
                     <div class="logo_section">
-                        <a class="navbar-brand" href="index.html"><img src="{% static 'images/logo.png' %}" alt="image"></a>
+                        <a class="navbar-brand" href="{% url 'home' %}"><img src="{% static 'images/logo.png' %}" alt="image"></a>
                     </div>
                     <div class="site_information">
                         <ul>
-                            <li><a href="mailto:exchang@gmail.com"><img src="{% static 'images/mail_icon.png' %}" alt="#" />dxtrades@gmail.com</a></li>
-                            <li><a class="join_bt" href="login.html">Login</a></li>
+                            <li><a href="mailto:exchang@gmail.com" style="font-size:13px;"><img src="{% static 'images/mail_icon.png' %}" alt="#" />dxtradeinvestment@gmail.com</a></li>
+                            <li><a class="join_bt" href="{% url 'login' %}">Login</a></li>
                         </ul>
                     </div>
                 </div>
@@ -85,11 +85,11 @@
                 </button>
                 <div class="collapse navbar-collapse justify-content-end" id="navbar-wd">
                     <ul class="navbar-nav">
-                        <li><a class="nav-link active" href="{% url 'home' %}">Home</a></li>
-                        <li><a class="nav-link" href="{% url 'about' %}">About</a></li>
-                        <li><a class="nav-link" href="wallet.html">Wallet</a></li>
-                        <li><a class="nav-link" href="{% url 'services' %}">Services</a></li>
-                        <li><a class="nav-link" href="{% url 'contact' %}">Contact</a></li>
+                        <li><a class="nav-link {% block nav_home %}{% endblock %}" href="{% url 'home' %}">Home</a></li>
+                        <li><a class="nav-link {% block nav_about %}{% endblock %}" href="{% url 'about' %}">About</a></li>
+                        <li><a class="nav-link" href="{% url 'wallet' %}">Wallet</a></li>
+                        <li><a class="nav-link {% block nav_services %}{% endblock %}" href="{% url 'services' %}">Services</a></li>
+                        <li><a class="nav-link contact" href="{% url 'contact' %}">Contact</a></li>
                     </ul>
                 </div>
                      </div>
@@ -133,7 +133,7 @@
                                 <ul class="menu_footer">
                                     <li><a href="{% url 'home' %}">Home</a></li>
                                     <li><a href="{% url 'about' %}">About</a></li>
-                                    <li><a href="wallet.html">Wallet</a></li>
+                                    <li><a href="{% url 'wallet' %}">Wallet</a></li>
                                     <li><a href="{% url 'services' %}">Services</a></li>
                                     <li><a href="{% url 'contact' %}">Contact</a></li>
                                 </ul>
@@ -146,7 +146,7 @@
                              <h3>Contact us</h3>
                              <ul class="full">
                                <li><img src="{% static 'images/i5.png' %}"><span>London 145<br>United Kingdom</span></li>
-                               <li><img src="{% static 'images/i6.png' %}"><span>dxtrades@gmail.com</span></li>
+                               <li><img src="{% static 'images/i6.png' %}"><span>dxtradeinvestment@gmail.com</span></li>
                                <li><img src="{% static 'images/i7.png' %}"><span>+12586954775</span></li>
                              </ul>
                          </div>

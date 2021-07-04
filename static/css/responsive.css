@@ -304,7 +304,12 @@ padding: 7px 15px;
     .logo_section {
         width: 100%;
         text-align: center;
+
     }
+	.header_top{
+
+		height: 0px;
+	}
     .navbar-brand{
          margin-left: 10px;
          margin-right: 10px;
@@ -423,8 +428,9 @@ padding: 7px 15px;
 		
     }
 	.start_exchange_bt {
-		 font-size: 20px;
-		 border-size: 10px;
+		 font-size: 10px;
+		 width: 150px;
+		 
 	}
 	.slide_text h3 strong{
          font-size: 40px;
@@ -476,6 +482,10 @@ padding: 7px 15px;
     width: 280px;
     height: 280px;
 	}
+	
+	
+	
+	
 	.fill {
 		
 	margin: 0% 0%;

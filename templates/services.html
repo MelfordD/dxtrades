@@ -1,5 +1,8 @@
 {% extends 'base.html' %}
 {% load static %}
+{% block nav_services %}
+	active
+{% endblock %}
 {% block content %}
 	
 	<div class="section">
@@ -45,8 +48,8 @@
                         <a class="main_bt" href="investment.html">Invest</a>
                     </div>
                 </div>
-				<div class="col-md-6">
-                    <div class="full text_align_left_img img_size">
+				<div class="col-md-6 ">
+                    <div class="img_size full text_align_left_img" id="img_size">
                         <img src="{% static 'images/img1.png' %}" alt="#" />
                     </div>
                 </div>
