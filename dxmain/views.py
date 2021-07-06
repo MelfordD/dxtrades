@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.contrib.auth.decorators import login_required
-from accounts.models import balance
+from .models import *
 from django.contrib.auth.models import User
 
 
@@ -28,11 +28,7 @@ def investment(request):
     return render(request, "investment.html")
 
    
-def wallet(request):
-	#return HttpResponse("about")
-    #valuenext=request.POST.get('next')
-    user = balance.objects.all()
-    return render(request, "wallet.html", {"user":user})
+
     
 @login_required    
 def deposit(request):

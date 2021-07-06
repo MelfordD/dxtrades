@@ -1,7 +1,9 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth.models import User, auth
 from django.contrib import messages
-from .models import balance
+from .models import *
+
+
 
 # Create your views here.
 
@@ -34,6 +36,8 @@ def signup(request):
         password = request.POST['password']
         password2 = request.POST['password2']
         
+        
+        
         if password==password2:
             if User.objects.filter(username=username).exists():
                 messages.info(request, 'Username taken')
@@ -59,6 +63,3 @@ def logout(request):
     auth.logout(request)
     return redirect('/')
     
-def profile(request):
-    user = balance.objects.get(user=request.user)
-    return render(request, 'wallet.html', {"balance":user.balance})
