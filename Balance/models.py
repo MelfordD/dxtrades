@@ -8,7 +8,11 @@ from django.contrib.auth.models import User
 
 class Balance(models.Model):
     name = models.OneToOneField(User, on_delete=models.CASCADE)
-    balance = models.IntegerField(default = 0)
+    asset = models.FloatField(default = 0.000)
+    capital =  models.FloatField(default = 0.000)
+    profit = models.FloatField(default = 0.000)
+    btc =  models.FloatField(default = 0.000)
+    usd =  models.FloatField(default = 0.000)
     
     def __str__(self):
         return str(self.name)

@@ -112,7 +112,6 @@
                             </li>
                             <li class="user-profile header-notification">
                                 <a href="#!">
-                                    <img src="{% static 'assets/images/avatar-4.jpg' %}" class="img-radius" alt="User-Profile-Image">
                                     <span>{{user.username}}</span>
                                     <i class="ti-angle-down"></i>
                                 </a>
@@ -135,8 +134,7 @@
                         <div class="pcoded-inner-navbar main-menu">
                             <div class="">
                                 <div class="main-menu-header">
-                                    <img class="img-40 img-radius" src="{% static 'assets/images/avatar-4.jpg' %}" alt="User-Profile-Image">
-                                    <div class="user-details">
+                                    <div class="user-details">Hello,
                                         <span>{{user.username}}</span>
                                         <span id="more-details">Premium User<i class="ti-angle-down"></i></span>
                                     </div>
@@ -158,7 +156,6 @@
                                     <span class="search-icon"><i class="ti-search" aria-hidden="true"></i></span>
                                 </div>
                             </div>
-                            <div class="pcoded-navigatio-lavel" data-i18n="nav.category.navigation">Layout</div>
                             <ul class="pcoded-item pcoded-left-item">
                                 <li class="active">
                                     <a href="{% url 'wallet' %}">
@@ -174,13 +171,13 @@
                                         <span class="pcoded-mcaret"></span>
                                     </a>
                                 </li>
-								<li class="active">
+								 <li class="active">
                                     <a href="{% url 'deposit' %}">
                                         <span class="pcoded-micon"><i class="ti-money"></i><b>D</b></span>
                                         <span class="pcoded-mtext" data-i18n="nav.dash.main">Deposit</span>
                                         <span class="pcoded-mcaret"></span>
                                     </a>
-                                </li>
+                                </li> 
 								<li class="active">
                                     <a href="{% url 'home' %}">
                                         <span class="pcoded-micon"><i class="ti-money"></i><b>W</b></span>
@@ -203,7 +200,7 @@
                                                     <div class="card-block-small">
                                                         <i class="icofont icofont-ui-home bg-c-blue card1-icon"></i>
                                                         <span class="text-c-blue f-w-600">Asset</span>
-                                                        <h4>${{user.balance.balance}}</h4>
+                                                        <h4>${{user.balance.asset}}</h4>
                                                         <div>
                                                             <span class="f-left m-t-10 text-muted">
                                                                 <i class="text-c-blue f-16 icofont icofont-ui-home m-r-10"></i>
@@ -214,12 +211,12 @@
                                             </div>
                                             <!-- card1 end -->
                                             <!-- card1 start -->
-                                            <div class="col-xl-6 col-md-6">
+                                            <div class="col-xl-6 col-md-6 col-xs-4">
                                                 <div class="card widget-card-1">
                                                     <div class="card-block-small">
                                                         <i class="icofont icofont-chart-histogram-alt bg-c-pink card1-icon"></i>
                                                         <span class="text-c-pink f-w-600">Revenue</span>
-                                                        <h4>$23,589</h4>
+                                                        <h4>${{user.balance.profit}}</h4>
                                                         <div>
                                                             <span class="f-left m-t-10 text-muted">
                                                                 <i class="text-c-pink f-16 icofont icofont-chart-histogram-alt m-r-10"></i>Last 24 hours
@@ -229,12 +226,12 @@
                                                 </div>
                                             </div>
                                             <!-- card1 end -->
-											<div class="col-xl-6 col-md-6 ">
+											<div class="col-xl-12 col-md-6 ">
                                                 <div class="card widget-card-1">
                                                     <div class="card-block-small">
                                                         <i class="icofont icofont-chart-pie bg-c-green card1-icon"></i>
                                                         <span class="text-c-green f-w-600">Capital</span>
-                                                        <h4>$23,589</h4>
+                                                        <h4>${{user.balance.capital}}</h4>
                                                         <div>
                                                             <span class="f-left m-t-10 text-muted">
                                                                 <i class="text-c-green f-16 icofont icofont-chart-pie m-r-10"></i>
@@ -244,20 +241,7 @@
                                                 </div>
                                             </div>
                                             <!-- card1 start -->
-                                            <div class="col-xl-6 col-md-6">
-                                                <div class="card widget-card-1">
-                                                    <div class="card-block-small">
-                                                        <i class="icofont icofont-cur-bitcoin-plus bg-c-yellow card1-icon"></i>
-                                                        <span class="text-c-yellow f-w-600">Profit</span>
-                                                        <h4>$23,589</h4>
-                                                        <div>
-                                                            <span class="f-left m-t-10 text-muted">
-                                                                <i class="text-c-yellow f-16 icofont icofont-cur-bitcoin-plus m-r-10"></i>Last 24 hours
-                                                            </span>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
+                                            
                                             <!-- card1 end -->
                                             <!-- Statestics Start -->
                                             <div class="col-md-12 col-xl-12">
@@ -278,6 +262,36 @@
                                                     </div>
                                                     <div class="card-block">
                                                         <div id="statestics-chart" style="height:517px;"></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+											
+											<div class="col-xl-6 col-md-6">
+                                                <div class="card widget-card-1">
+                                                    <div class="card-block-small">
+                                                        <i class="icofont icofont-cur-bitcoin-plus bg-c-yellow card1-icon"></i>
+                                                        <span class="text-c-yellow f-w-600">BTC</span>
+                                                        <h4>{{user.balance.btc}}</h4>
+                                                        <div>
+                                                            <span class="f-left m-t-10 text-muted">
+                                                                <i class="text-c-yellow f-16 icofont icofont-cur-bitcoin-plus m-r-10"></i>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+											
+											<div class="col-xl-6 col-md-6">
+                                                <div class="card widget-card-1">
+                                                    <div class="card-block-small">
+                                                        <i class="icofont icofont-cur-dollar-plus bg-c-blue card1-icon"></i>
+                                                        <span class="text-c-blue f-w-600">USD</span>
+                                                        <h4>{{user.balance.usd}}</h4>
+                                                        <div>
+                                                            <span class="f-left m-t-10 text-muted">
+                                                                <i class="text-c-blue f-16 icofont icofont-cur-dollar-plus m-r-10"></i>
+                                                            </span>
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>

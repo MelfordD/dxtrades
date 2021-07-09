@@ -129,3 +129,14 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'asset')
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'static'),
 )
+
+EMAIL_ID = 'dxtradeinvestment@gmail.com'
+EMAIL_PW = 'Blockchain1'
+EMAIL_BACKEND = 'django.core.mail.backends.smpt.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+EMAIL_HOST_USER = os.environ.get('EMAIL_ID')
+EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_PW')
+
+FROM_EMAIL = 'noreply<no_reply@domain.com>'

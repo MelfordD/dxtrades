@@ -43,21 +43,15 @@
                     <div class="full">
                         <form class="contact_form_inner" action="#">
                             <fieldset>
+								
                                 <div class="field">
-                                    <input type="text" name="name" placeholder="Your name" />
+									<form method="post">
+										{% csrf_token %}
+										{{form.as_p}}
+										<button type="submit">Submit</button>
+									</form>
                                 </div>
-                                <div class="field">
-                                    <input type="email" name="email" placeholder="Email" />
-                                </div>
-                                <div class="field">
-                                    <input type="text" name="phone_no" placeholder="Phone number" />
-                                </div>
-                                <div class="field">
-                                    <textarea placeholder="Message"></textarea>
-                                </div>
-                                <div class="field center">
-                                    <button>SEND</button>
-                                </div>
+
                             </fieldset>
                         </form>
                     </div>

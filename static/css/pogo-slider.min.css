@@ -70,11 +70,11 @@
 
 .pogoSlider-progressBar {
 	position: absolute;
-	width: 100%;
+	width: 10%;
 	height: 5px;
 	top: 0;
 	left: 0;
-	background: #fff;
+	background: ;
 	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=20)";
 	filter: alpha(opacity=20);
 	background: rgba(255, 255, 255, .2);
