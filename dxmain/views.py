@@ -39,14 +39,15 @@ def contact(request):
         except BadHeaderError:
             return HttpResponse('Invalid header found.')
         return redirect ('home')
-      
+    form = ContactForm() 
     return render(request, "contact.html", {'form':form})
 
     
 def investment(request):
 	#return HttpResponse("about")
     return render(request, "investment.html")
-  
+
+@login_required 
 def deposit(request):
 	#return HttpResponse("about")
     if request.method == 'POST':
