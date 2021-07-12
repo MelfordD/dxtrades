@@ -68,29 +68,7 @@
 	box-sizing: border-box
 }
 
-.pogoSlider-progressBar {
-	position: absolute;
-	width: 10%;
-	height: 5px;
-	top: 0;
-	left: 0;
-	background: ;
-	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=20)";
-	filter: alpha(opacity=20);
-	background: rgba(255, 255, 255, .2);
-	z-index: 6
-}
 
-.pogoSlider-progressBar-duration {
-	position: absolute;
-	height: 100%;
-	left: 0;
-	width: 0;
-	background: #fff;
-	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=40)";
-	filter: alpha(opacity=40);
-	background: rgba(255, 255, 255, .4)
-}
 
 .pogoSlider-dir-btn {
 	position: absolute;
@@ -235,7 +213,7 @@
 	background: rgba(255, 255, 255, .5);
 	border: none;
 	border-radius: 10px;
-	width: 40px;
+	width: 10px;
 	height: 10px;
 	box-shadow: 0 1px 1px rgba(0, 0, 0, .1);
 	cursor: pointer

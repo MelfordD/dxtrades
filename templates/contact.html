@@ -42,16 +42,12 @@
                 <div class="col-lg-6 col-sm-12 offset-lg-3">
                     <div class="full">
                         <form class="contact_form_inner" action="#">
-                            <fieldset>
-								
-                                <div class="field">
-									<form method="post">
-										{% csrf_token %}
-										{{form.as_p}}
+							{% csrf_token %}
+                            <fieldset>	
+                                <div class="field">										
+											{{form}}
 										<button type="submit">Submit</button>
-									</form>
                                 </div>
-
                             </fieldset>
                         </form>
                     </div>

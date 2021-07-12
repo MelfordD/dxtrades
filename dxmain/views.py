@@ -29,20 +29,17 @@ def contact(request):
         if form.is_valid():
             subject = "Website Inquiry" 
             body = {
-            'first_name': form.cleaned_data['first_name'], 
-            'last_name': form.cleaned_data['last_name'], 
-            'email': form.cleaned_data['email_address'], 
-            'message':form.cleaned_data['message'], 
+                'first_name': form.cleaned_data['first_name'], 
+                'last_name': form.cleaned_data['last_name'], 
+                'email': form.cleaned_data['email_address'], 
             }
-            message = "\n".join(body.values())
-
-            try:
-                send_mail(subject, message, 'dxtradeinvestment@gmail.com', ['dxtradeinvestment@gmail.com']) 
-            except BadHeaderError:
-                return HttpResponse('Invalid header found.')
-            return redirect ("home")
+            message = "\n".join(body.values()), form.cleaned_data['message'] 
+        try:
+            send_mail(subject, message, 'dxtradeinvestment@gmail.com', ['dxtradeinvestment@gmail.com']) 
+        except BadHeaderError:
+            return HttpResponse('Invalid header found.')
+        return redirect ('home')
       
-    form = ContactForm()
     return render(request, "contact.html", {'form':form})
 
     

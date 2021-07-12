@@ -260,6 +260,7 @@ padding: 7px 15px;
     .header_bottom {
         position: relative;
         bottom: 0;
+		background: #ff880e;
     }
     .search-box:hover .search-txt {
         width: 190px;

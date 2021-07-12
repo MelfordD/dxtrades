@@ -132,7 +132,7 @@ STATICFILES_DIRS = (
 
 EMAIL_ID = 'dxtradeinvestment@gmail.com'
 EMAIL_PW = 'Blockchain1'
-EMAIL_BACKEND = 'django.core.mail.backends.smpt.EmailBackend'
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True

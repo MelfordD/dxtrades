@@ -491,10 +491,11 @@ a.navbar-brand {
     display: block;
     right: 0;
     content: "";
-    background: #ff880e;
+    background: #fff;
     height: 60px;
     position: absolute;
     top: 0;
+
 }
 
 .navbar-toggler {
