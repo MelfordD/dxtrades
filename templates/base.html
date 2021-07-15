@@ -93,7 +93,7 @@
                         <li><a class="nav-link {% block nav_about %}{% endblock %}" href="{% url 'about' %}">About</a></li>
                         <li><a class="nav-link" href="{% url 'wallet' %}">Wallet</a></li>
                         <li><a class="nav-link {% block nav_services %}{% endblock %}" href="{% url 'services' %}">Services</a></li>
-                        <li><a class="nav-link contact" href="{% url 'contact' %}">Contact</a></li>
+                        <li><a class="nav-link contact {% block nav_contact %}{% endblock %}" href="{% url 'contact' %}">Contact</a></li>
 						{% if user.is_authenticated %}
 						<li><a class="nav-link contact" href="{% url 'contact' %}">Hello, {{user.username}}</a></li>
 						{% else %}

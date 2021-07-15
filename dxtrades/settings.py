@@ -79,8 +79,12 @@ WSGI_APPLICATION = 'dxtrades.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'dxtrade',
+        'USER': 'postgres',
+        'PASSWORD': '1234',
+        'HOST': 'localhost',
+        'PORT': '',
     }
 }
 
@@ -130,13 +134,10 @@ STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'static'),
 )
 
-EMAIL_ID = 'dxtradeinvestment@gmail.com'
-EMAIL_PW = 'Blockchain1'
-EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
-EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_PORT = 587
-EMAIL_USE_TLS = True
-EMAIL_HOST_USER = os.environ.get('EMAIL_ID')
-EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_PW')
 
-FROM_EMAIL = 'noreply<no_reply@domain.com>'
+
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER = 'dxtradeinvestment@gmail.com'
+EMAIL_HOST_PASSWORD = 'Blockchain1'
+EMAIL_USE_TLS = True
+EMAIL_PORT = 587

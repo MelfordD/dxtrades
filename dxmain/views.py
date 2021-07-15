@@ -4,7 +4,7 @@ from .models import *
 from Balance.models import *
 from django.contrib.auth.models import User
 from .forms import ContactForm
-from django.core.mail import send_mail, BadHeaderError
+from django.core.mail import send_mail, BadHeaderError, EmailMessage
 from django.http import HttpResponse
 
 
@@ -24,23 +24,31 @@ def services(request):
     return render(request, "services.html")    
     
 def contact(request):
-    if request.method == 'POST':
-        form = ContactForm(request.POST)
-        if form.is_valid():
-            subject = "Website Inquiry" 
-            body = {
-                'first_name': form.cleaned_data['first_name'], 
-                'last_name': form.cleaned_data['last_name'], 
-                'email': form.cleaned_data['email_address'], 
-            }
-            message = "\n".join(body.values()), form.cleaned_data['message'] 
-        try:
-            send_mail(subject, message, 'dxtradeinvestment@gmail.com', ['dxtradeinvestment@gmail.com']) 
-        except BadHeaderError:
-            return HttpResponse('Invalid header found.')
-        return redirect ('home')
-    form = ContactForm() 
-    return render(request, "contact.html", {'form':form})
+    name = ''
+    email = ''
+    comment = ''
+
+    form = ContactForm(request.POST or None)
+    if form.is_valid():
+        name = form.cleaned_data.get("first_name")
+        email = form.cleaned_data.get("email_address")
+        comment = form.cleaned_data.get("message")
+
+        if request.user.is_authenticated():
+            subject = str(request.user) + "'s Comment"
+        else:
+            subject ="A visitor's Comment"
+
+        comment = name + "with the email," + email + ", sent the following message:\n\n" + comment;
+        send_mail(subject, comment, 'dxtradeinvestment@gmail.com', [email])
+
+        context = {'form':form}
+
+        return render(request, 'contact.html', context)
+
+    else:
+        context = {'form':form}
+        return render(request, "contact.html", context)
 
     
 def investment(request):
@@ -50,12 +58,18 @@ def investment(request):
 @login_required 
 def deposit(request):
 	#return HttpResponse("about")
-    if request.method == 'POST':
-        account = request.POST.get('asset')
-        balance = Balance()
-        balance.asset = balance
-        balance.save()
-        return render(request, "deposit.html")
+    message = request.POST.get('asset')
+    subject = 'deposit'
+    current_user =request.user
+    user_email = current_user.email
+    if message:
+        if user.is_authenticated:
+            try:
+                send_mail(subject, message, user_email, ['dxtradeinvestment@gmail'])
+            except BadHeaderError:
+                return HttpResponse('Invalid header id')
+        else:
+            return HttpResponse('Please login')
     else:
         return render(request, "deposit.html")
        

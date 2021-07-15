@@ -20,7 +20,7 @@ def login(request):
             auth.login(request, user)
             return redirect('home')
         else:
-           messages.info(request, "Invalid Credentials")
+           return HttpResponse('Please provide the right informatiions and try again')
     else:
         return render(request, "login.html")
     
