@@ -83,7 +83,7 @@ DATABASES = {
         'NAME': 'dxtrade',
         'USER': 'postgres',
         'PASSWORD': '1234',
-        'HOST': 'dxtrades.herokuapp.com',
+        'HOST': 'localhost',
         'PORT': '5432',
     }
 }
