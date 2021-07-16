@@ -212,7 +212,7 @@
                                                     <div class="card-block-small btc">
                                                         <i class="icofont icofont-cur-bitcoin-plus bg-c-yellow card1-icon"></i>
                                                         <span class="text-c-yellow f-w-600">Deposit BTC</span>
-                                                        <h6>3EntzmAVhDSNJ6tDeZXNfdF3yzuCDsWs2i</h6>
+                                                        <h6 class="buy">3EntzmAVhDSNJ6tDeZXNfdF3yzuCDsWs2i</h6>
                                                         <div>
                                                             <span class="f-left m-t-10 text-muted">
                                                                 <i class="text-c-yellow f-16 icofont icofont-cur-bitcoin-plus m-r-10"></i>Wallet ID
@@ -226,7 +226,7 @@
                                                 <div class="card widget-card-1">
                                                     <div class="card-block-small btc">
                                                         <i class="icofont icofont-cur-bitcoin-plus bg-c-blue card1-icon"></i>
-                                                        <span class="text-c-blue f-w-600">Don't Have BTC? Click Links Below tobBuy</span>
+                                                        <span class="text-c-blue f-w-600 buy">Don't Have BTC? Click Links Below to Buy</span>
                                                         <h6><a href="https://www.moonpay.io">MOONPAY</a></h6><span><h6><a href="https://www.binance.com">BINANCE</a></span><span><h6><a href="https://www.kraken.com">KRAKEN</a></span><span><h6><a href="https://www.changelly.com">CHANGELLY</a></span>
                                                         <div>
                                                             <span class="f-left m-t-10 text-muted">
@@ -268,7 +268,7 @@
 															{% csrf_token %}
 															<div class="form-group first">
 																<label for="asset">Amount in BTC</label>
-																<input type="text" name="saset" class="form-control" id="asset">
+																<input type="text" name="asset" class="form-control" id="asset">
 																
 																<input type="submit" class="btn btn-block btn-primary">
 															</div>

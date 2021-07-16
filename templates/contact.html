@@ -41,12 +41,23 @@
             <div class="row">
                 <div class="col-lg-6 col-sm-12 offset-lg-3">
                     <div class="full">
-                        <form class="contact_form_inner" action="#">
+                        <form class="contact_form_inner" action="" method="post">
 							{% csrf_token %}
-                            <fieldset>	
-                                <div class="field">										
-											{{form}}
-										<button type="submit">Submit</button>
+                            <fieldset>
+                                <div class="field">
+                                    <input type="text" name="name" placeholder="Your name" />
+                                </div>
+                                <div class="field">
+                                    <input type="email" name="email" placeholder="Email" />
+                                </div>
+                                <div class="field">
+                                    <input type="text" name="phone_no" placeholder="Phone number" />
+                                </div>
+                                <div class="field">
+                                    <textarea name="message" placeholder="Message"></textarea>
+                                </div>
+                                <div class="field center">
+                                    <button>SEND</button>
                                 </div>
                             </fieldset>
                         </form>

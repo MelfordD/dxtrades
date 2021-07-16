@@ -240,6 +240,10 @@ padding: 7px 15px;
 /* mobile or only mobile */
 @media (max-width: 767px) {
 	
+	.buy {
+		font-size: 15px;
+	}
+	
 	/* Slideshow container */
 .slideshow-container {
   position: relative;
