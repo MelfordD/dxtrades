@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
 from .models import *
 from Balance.models import *
@@ -39,6 +39,10 @@ def contact(request):
 def investment(request):
 	#return HttpResponse("about")
     return render(request, "investment.html")
+    
+def success(request):
+	#return HttpResponse("about")
+    return render(request, "success.html")
 
 @login_required 
 def deposit(request):
@@ -48,6 +52,8 @@ def deposit(request):
         message = 'I want to deposit ' + str(amount) + ' from ' + str(current_user)
         
         send_mail('Deposit', message, settings.EMAIL_HOST_USER, ['dxtradeinvestment@gmail'], fail_silently=False)
+        
+        return redirect('success')
         
     return render(request, "deposit.html")
        

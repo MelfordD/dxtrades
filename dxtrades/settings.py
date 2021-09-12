@@ -23,9 +23,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '9im9v8!krhqn@%(w$$gwqfgwfhlx0^yg1d02yzb7-w5vkv-s_^'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = ['dxtrades.herokuapp.com', '127.0.0.1',]
+ALLOWED_HOSTS = ['dxtrades.com', 'www.dxtrades.com', '127.0.0.1',]
 
 
 # Application definition
@@ -116,6 +116,8 @@ USE_I18N = True
 USE_L10N = True
 
 USE_TZ = True
+
+
 
 
 # Static files (CSS, JavaScript, Images)
