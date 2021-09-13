@@ -79,8 +79,12 @@ WSGI_APPLICATION = 'dxtrades.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': [daaptr09g2eatm]
+        'USER': [lqxmnwvlolnsiy]
+        'PASSWORD': [67be1855f22e21ad4fe156fd71fc7226074135aafd864670f5e0ae25b949a39a]
+        'HOST': [ec2-44-193-150-214.compute-1.amazonaws.com]
+        'PORT':  [5432]
     }
 }
 
