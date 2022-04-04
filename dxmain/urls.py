@@ -27,5 +27,4 @@ urlpatterns = [
     path('investment/', views.investment, name="investment"),
     path('deposit/', views.deposit, name="deposit"),
     path('success/', views.success, name="success"),
-    path('admin/', admin.site.urls),
 ]
