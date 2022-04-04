@@ -219,7 +219,7 @@ button:focus {
 	animation-delay: 0s;
 	animation-delay: 0s;
 	animation-delay: 0s;
-	background-image: url('../images/gb.png');
+	background-image: url('');
 	background-size: 100% 100%;
 }
 
@@ -883,7 +883,7 @@ a.navbar-brand {
 }
 
 .about_bg {
-    background-image: url('../images/about_bg.png');
+    background-image: url();
     background-repeat: no-repeat;
     background-position: left center;
 }
@@ -2304,7 +2304,7 @@ ul.bottom_menu li {
 	background-color: #f9f9f9;
 	min-height: 150px;
 	text-align: center;
-	background-image: url("../images/slider-01.jpg");
+	background-image: url("");
 	background-size: cover;
 	background-position: center center;
 }
